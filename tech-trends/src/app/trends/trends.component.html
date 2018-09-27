@@ -1,0 +1,24 @@
+<p>
+  trends works!
+</p>
+{{trends}}
+<h2>{{trends.name}} Details</h2>
+<!-- <div><span>id: </span>{{trends.id}}</div> -->
+<!-- <div><span>name: </span>{{trends.name}}</div> -->
+<div>
+  <label>id:
+    <input [(ngModel)]="trends.id " placeholder="id">
+  </label>
+</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="trends.name" placeholder="name">
+  </label>
+</div>
+<h2>My Trends</h2>
+<ul class="trends">
+  <li>
+    <span class="badge">{{trends.id}}</span> {{trends.name}}
+  </li>
+</ul>
+<li *ngFor="let trend of trends" (click)="onSelect(trends)"></li>
